@@ -11,7 +11,6 @@ app.listen(3000, () => {
 });
 
 app.post("/generateDocx", async (req, res) => {
-	console.log("Generating Docx", req.body);
 	let docxGenerator = new DocxGenerator();
 	let docxFile = await docxGenerator.generateDocx(req.body.date, req.body.entries);
 
