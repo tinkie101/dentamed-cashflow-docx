@@ -1,4 +1,4 @@
-# dentamed-cashflow-hosting
+# dentamed-cashflow-docx
 Document generator
 
 ## Build
