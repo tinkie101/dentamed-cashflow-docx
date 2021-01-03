@@ -1,9 +1,10 @@
 const express = require("express");
 const DocxGenerator = require("./DocxGenerator");
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 
 const app = express();
-
+app.use(helmet());
 app.use(bodyParser.json());
 
 app.listen(3000, () => {

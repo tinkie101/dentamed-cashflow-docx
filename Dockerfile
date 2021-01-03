@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:alpine
 
 WORKDIR /usr/src/app
 
@@ -9,7 +9,5 @@ ENV NODE_ENV production
 RUN npm ci --only=production
 
 COPY . .
-
-EXPOSE 3000
 
 CMD [ "node", "app.js" ]
