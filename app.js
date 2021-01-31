@@ -13,7 +13,8 @@ app.listen(3000, () => {
 
 app.post("/generateDocx", async (req, res) => {
 	let docxGenerator = new DocxGenerator();
-	let docxFile = await docxGenerator.generateDocx(req.body.date, req.body.entries);
+	let docxFile = await docxGenerator.generateDocx(req.body.date, req.body.entries, req.body.in, req.body.exp, req.body.net);
 
+	console.log(req.body);
 	res.end(docxFile);
 });

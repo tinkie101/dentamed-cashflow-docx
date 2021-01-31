@@ -3,7 +3,7 @@ const JSZip = require("jszip");
 const docxtemplater = require("docxtemplater");
 
 module.exports = class DocxGenerator {
-	async generateDocx(dateString, entries) {
+	async generateDocx(dateString, entries, income, expenses, net) {
 		let template = await this.loadFile();
 		let zip = new JSZip(template);
 		let document = new docxtemplater().loadZip(zip);
@@ -11,6 +11,9 @@ module.exports = class DocxGenerator {
 		document.setData({
 			date: dateString,
 			entries: entries,
+			in: income,
+			exp: expenses,
+			net: net
 		});
 
 		document.render();
