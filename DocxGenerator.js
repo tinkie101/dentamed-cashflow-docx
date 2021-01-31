@@ -23,7 +23,7 @@ module.exports = class DocxGenerator {
 
 	loadFile() {
 		return new Promise((resolve, reject) => {
-			fs.readFile("./template.docx", null, (error, data) => {
+			fs.readFile("./template/template.docx", null, (error, data) => {
 				if(error) {
 					reject(error);
 				}
